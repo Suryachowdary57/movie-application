@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="username" placeholder="username" id="username"><br>
+    <input type="password" placeholder="password" id="password"><br>
+    <button onclick="clicking()">login</button>
+    
+    <script>
+        let my_data = {};
+        function clicking(){
+            let name = document.querySelector("#username").value;
+            let pass = document.querySelector("#password").value;
+            my_data["username"]= name;
+            my_data["user_password"]= pass;
+            console.log(my_data)
+            let surya_data = JSON.stringify(my_data)
+            localStorage.setItem("my_data",surya_data)
+            let data1 = localStorage.getItem("data");
+            let data2 = JSON.parse(data1)
+            console.log(data2)
+            if(data2["username"] == name && data2["password"] == pass){
+                console.log(" valid")
+            }else{
+                console.log(" invalid")
+            }
+            
+
+
+
+        }
+         
+
+
+
+
+
+
+
+       
+       
+       
+         
+       
+
+    </script>
+</body>
+</html>

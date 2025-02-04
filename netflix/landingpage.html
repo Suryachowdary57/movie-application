@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+         <nav class="nav-bar">
+            <h3>AMINFLIX</h3>
+        <ul class="list">
+            <li>MOVIES</li>
+            <a href="" style="color: orange; margin-left: 10px;">TV SHOWS</a>
+            <a href="trending.html" style="color: orange;  margin-left: 10px;">TRENDING</a>
+            <a href="" style="color: orange;  margin-left: 10px;">NEW RELEASED</a>
+            <a href="login.html" style="color: red; margin-left: 50px;">Login</a>
+            <a href="reg.html" style="color: red; margin-left: 20px;">SignUP</a>
+            
+            
+        </ul>
+        <button id="toggle">  Mode</button>
+        <div>
+            <input type="search" placeholder="search for Actors" class="serch" id="serch_here" onchange="show_movie(event.target.value)">
+            <!-- <input type="search" placeholder="search" style="color:#929292;; background-color:#D70466 ;" class="serch" id="serch_here" onchange="show_price(event.target.value)"> -->
+        </div>
+        <div id="language">
+            <select name="language" onchange="change_language(value)" id="movies">
+                <option value="">Languages</option>
+                <option value="telugu">Telugu</option>
+                <option value="english">English</option>
+                <option value="hindi">Hindi</option>  
+               </select>
+        </div>
+         </nav>
+
+    <div class="movie-cards">
+        <div class="movies">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqegEn55NS5QsYDWBdnLNmdPwuwZHUTlhBiFpZgeitDo5YUJ2pHlkpW_Kh4EnNqeWVw_I&usqp=CAU" alt="" class="movie-image">
+            <h4 class="movie-title">Need For Speed</h4>
+        </div>
+        <div class="movies">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/drive-1584723497.jpg" alt="" class="movie-image">
+            <h4 class="movie-title">Drive</h4>
+        </div>
+        <div class="movies">
+            <img src="https://m.media-amazon.com/images/M/MV5BMTk0NDU4ODc4OF5BMl5BanBnXkFtZTcwMjIwMTU1OQ@@._V1_.jpg" alt="" class="movie-image">
+            <h4 class="movie-title">vehical19</h4>
+        </div>
+        <div class="movies">
+            <img src="https://amc-theatres-res.cloudinary.com/v1561053168/amc-cdn/production/2/movies/42800/42788/Poster/189397R1.jpg" alt="" class="movie-image">
+            <h4 class="movie-title">Fast&Furious7</h4>
+        </div>
+        <div class="movies">
+            <img src="https://resizing.flixster.com/tazbGeDawCadDzKurTfEMxYKQ6k=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8338313_p_v10_bb.jpg" alt="" class="movie-image">
+            <h4 class="movie-title">Fast&Furious5</h4>
+        </div>
+    </div>
+    <div class="category">
+        <h2 style="color: lightcoral; margin-left: 50px;font-size: 40px;">Category</h2>
+         <div class="category-cards">
+            <div class="category-box" id="drama" onclick="drama()">
+                <h1 style="position: relative;left: 70px; top: 15px;" id="drama-category">Drama</h1>
+            </div>
+            <div class="category-box" onclick="action()">
+                <h1 style="position: relative;left: 70px; top: 15px;" id="action-category">Action</h1>
+            </div>
+            <div class="category-box">
+                <h1 style="position: relative;left: 70px; top: 15px;">Comedy</h1>
+            </div>
+            <div class="category-box">
+                <h1 style="position: relative;left: 70px; top: 15px;" id="romantic-category">Romantic</h1>
+            </div>
+            <div class="category-box">
+                <h1 style="position: relative;left: 70px; top: 15px;">Horror</h1>
+            </div>
+         </div>
+    </div>
+    <div id="movie-render">
+
+    </div>
+
+    <div id="serch_function">
+
+    </div>
+
+    
+    <script src="script.js">
+    </script>
+</body>
+</html>

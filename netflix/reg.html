@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #user_name{
+            width: 200px;
+            height: 50px;
+             border-radius: 15px;
+        }
+        #email_id{
+            width: 200px;
+            height: 50px;
+            margin-left: 50px;
+            border-radius: 15px;
+        }
+        #user_password{
+            width: 200px;
+            height: 50px;
+            margin-top: 20px;
+            margin-left: 50px;
+            border-radius: 15px;
+        }
+        .container{
+            border: 2px solid black;
+            padding: 20px;
+            background-color: lightblue;
+
+        }
+    </style>
+</head>
+<body>  
+    <div class="container">
+
+    
+    <input type="text" placeholder="username" id="user_name">
+    <input type="email" placeholder="email" id="email_id">
+    <input type="password" placeholder="password" id="user_password" ><br>
+    <button onclick="submitform()">LOGIN</button>
+</div>
+    <script>
+        user_info={}
+        function submitform(){
+        let user_name = document.getElementById("user_name").value
+        let emailadd = document.getElementById("email_id").value
+        let userpassword = document.getElementById("user_password").value
+        // console.log("email_id",emailadd );
+        // console.log("user_password",userpassword)
+        // console.log("user_name",user_name)
+
+        user_info["username"]=user_name;
+        user_info["email"]= emailadd;
+        user_info["password"]= userpassword;
+        // console.log(user_info)
+        let username_regx = /^[a-zA-Z0-9]+$/
+        if(username_regx.test(user_name)){
+            console.log("username is valid")
+        }else{
+            console.log("enter valid username")
+        }
+
+        let email_regx =  /[a-zA-Z0-9.*%±]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}/
+        if(email_regx.test(emailadd)){
+            console.log("email is valid")
+        }else{
+            console.log("enter valid email")
+        }
+        let password_regx = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+        if(password_regx.test(userpassword)){
+            console.log("password is valid")
+        }else{
+            console.log("enter strong password")
+        }
+         
+
+
+        let new_data= JSON.stringify(user_info);
+        localStorage.setItem("data",new_data)
+
+
+        
+        }
+         
+    </script>
+</body>
+</html>
